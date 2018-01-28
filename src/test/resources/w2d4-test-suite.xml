@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite">
+	<test name="Compute Sum ">
+		<parameter name="browser" value="firefox"></parameter>
+		<parameter name="platform" value="mac"></parameter>
+		<classes>
+			<class name="week2.day4.testclasses.ComputeSumTest"></class>
+			<class name="week2.day4.testclasses.ExamplesDemoTest"></class>
+		</classes>
+	</test>
+</suite>
