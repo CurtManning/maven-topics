@@ -41,7 +41,7 @@ public class FindDuplicateExercise {
 		}
 		return duplicates;
 	}
-	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String[] names = { "Java", "JavaScript", "Python", "C", "Ruby", "Java" };

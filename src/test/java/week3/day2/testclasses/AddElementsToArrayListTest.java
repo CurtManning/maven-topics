@@ -1,4 +1,4 @@
-package week3.day2.testcases;
+package week3.day2.testclasses;
 
 import java.util.ArrayList;
 

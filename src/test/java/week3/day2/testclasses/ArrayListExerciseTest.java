@@ -1,4 +1,4 @@
-package week3.day2.testcases;
+package week3.day2.testclasses;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import week3.day1.appcode.ArrayListExercise;
-import week3.day2.testcases.ArrayListExerciseDataProvider;
+import week3.day2.testclasses.ArrayListExerciseDataProvider;
 
 
 public class ArrayListExerciseTest {

@@ -1,4 +1,4 @@
-package week3.day1.testcases;
+package week3.day1.testclasses;
 
 import org.testng.Reporter;
 import org.testng.annotations.DataProvider;

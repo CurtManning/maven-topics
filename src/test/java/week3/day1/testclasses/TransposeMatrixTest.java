@@ -1,4 +1,4 @@
-package week3.day1.testcases;
+package week3.day1.testclasses;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,7 +7,7 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import week3.day1.appcode.TransposeMatrix;
-import week3.day1.testcases.TransposeMatrixDataProvider;
+import week3.day1.testclasses.TransposeMatrixDataProvider;
 
 public class TransposeMatrixTest {
 
@@ -17,7 +17,7 @@ public class TransposeMatrixTest {
 		int[][] searchKey = new int[3][3];
 		boolean trueFalse = true;
 		int[][] expectedOutput = new int[3][3];
-		
+
 		for (int i = 0; i < 3; i++) {
 
 			TransposeMatrixDataProvider arrayobj = Arrayobj[i];
@@ -33,9 +33,9 @@ public class TransposeMatrixTest {
 				// System.out.println("matrix " + searchKey[i][j]);
 			}
 		}
-		
+
 		int[][] result = TransposeMatrix.transposeMatrix(searchKey);
-		//System.out.println(" The original Matrix ");
+		// System.out.println(" The original Matrix ");
 		for (int i = 0; i < searchKey.length; i++) {
 			for (int j = 0; j < searchKey[i].length; j++) {
 				if (result[i][j] != expectedOutput[i][j])

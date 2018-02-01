@@ -8,9 +8,14 @@ import java.util.Set;
 public class MapsDemo {
 
 	public static void main(String[] args) {
+		Map<Integer, String> hashMap = mapsDemo();
+		System.out.println(hashMap);
+	}
+
+	public static Map<Integer, String> mapsDemo() {
 		// Stores in pair, key -> value : Entry
 		Map<Integer, String> hmap = new HashMap<Integer, String>();
-		
+
 		hmap.put(12, "Chaitanya");
 		hmap.put(2, "Rahul");
 		hmap.put(7, "Singh");
@@ -18,16 +23,16 @@ public class MapsDemo {
 		hmap.put(3, "Anuj");
 		Set set = hmap.entrySet();
 		Iterator iterator = set.iterator();
-		
-		while(iterator.hasNext()) {
-			Map.Entry mentry = (Map.Entry)iterator.next();
-			System.out.print("Key is: "+ mentry.getKey() + " & Value is : ");
+
+		while (iterator.hasNext()) {
+			Map.Entry mentry = (Map.Entry) iterator.next();
+			System.out.print("Key is: " + mentry.getKey() + " & Value is : ");
 			System.out.println(mentry.getValue());
 		}
-		
+
 		String var = hmap.get(2);
-		System.out.println("Value at index 2 is :" + var );
-		
+		System.out.println("Value at index 2 is :" + var);
+
 		// Keys are unique, value can be duplicated
 		hmap.remove(3);
 		hmap.put(2, "BMW");
@@ -36,5 +41,6 @@ public class MapsDemo {
 		System.out.println(value4);
 		String value2 = hmap.get(2);
 		System.out.println(value2);
+		return hmap;
 	}
 }

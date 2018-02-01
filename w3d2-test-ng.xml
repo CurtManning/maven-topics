@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Week3 Day2 TestSuite">
+	<test name="Collections">
+		<classes>
+			<class name="week3.day2.testclasses.AddElementsToArrayListTest"></class>
+			<class name="week3.day2.testclasses.ArrayListExerciseTest"></class>
+			<class name="week3.day2.testclasses.ConvertArrayToArrayListTest"></class>
+			<class name="week3.day2.testclasses.FindDuplicateExerciseTest"></class>
+			<class name="week3.day2.testclasses.HashSetExamplesTest"></class>
+			<class name="week3.day2.testclasses.MapsDemoTest"></class>
+		</classes>
+	</test>
+</suite>
