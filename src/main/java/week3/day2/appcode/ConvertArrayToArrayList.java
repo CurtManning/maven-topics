@@ -9,25 +9,18 @@ public class ConvertArrayToArrayList {
 		// TODO Auto-generated method stub
 		String[] array = { "Ajeet", "Ahmed", "Ali", "Tom" };
 
-		ArrayList<String> result = convertArrayToArrayList(array);
-		System.out.println(result);
 		String[] strArray = convertArrayToArrayList1();
 		System.out.println(Arrays.toString(strArray));
-
-	}
-
-	public static ArrayList<String> convertArrayToArrayList(String[] asset) {
-		ArrayList<String> newAssetList = new ArrayList<String>();
-		for (String s : asset) {
-			newAssetList.add(s);
-		}
-		Arrays.asList(asset);
-		newAssetList.addAll(Arrays.asList(asset));
 		
-		return newAssetList;
+		ArrayList<String> result2 = convertArrayToArrayList2(array);
+		System.out.println(result2);
+		
+		ArrayList<String> result3 = convertArrayToArrayList3(array);
+		System.out.println(result3);
 
 	}
 
+	
 	public static String[] convertArrayToArrayList1() {
 		ArrayList<String> assetTradingList = new ArrayList<String>();
 		assetTradingList.add("Stock trading");
@@ -39,7 +32,25 @@ public class ConvertArrayToArrayList {
 		String[] strArray = assetTradingList.toArray(assetTradingArray);
 
 		return strArray;
-
 	}
+	
+	public static ArrayList<String> convertArrayToArrayList2(String[] asset) {
+		
+		ArrayList<String> newAssetList = new ArrayList<String>();
+		Arrays.asList(asset);
+		newAssetList.addAll(Arrays.asList(asset));
+		
+		return newAssetList;
+	}
+	
+	public static ArrayList<String> convertArrayToArrayList3(String[] asset) {
+		ArrayList<String> newAssetList = new ArrayList<String>();
+		for (String s : asset) {
+			newAssetList.add(s);
+		}
+		
+		return newAssetList;
+	}
+
 
 }

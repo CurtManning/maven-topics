@@ -20,6 +20,8 @@ public class AddElementsToArrayListTest {
 		expectedArrayList.add("Ali");
 		expectedArrayList.add("Tom");
 		Reporter.log("compareLists", true);
+		Reporter.log("AddElementsToArrayListTest.compareLists -> " + 
+				"AddElementsToArrayList.addElements", true);
 		ArrayList<String> expectedResults = AddElementsToArrayList.addElements(names);
 		Assert.assertEquals(expectedArrayList, expectedResults);
 		
