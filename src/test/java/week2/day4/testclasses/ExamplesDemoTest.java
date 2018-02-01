@@ -17,7 +17,7 @@ public class ExamplesDemoTest {
 		int[] searchKey = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 		int[] expectedOutput = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 
-		System.out.println("ExamplesDemoTest -> reverseArraytest");
+		Reporter.log("ExamplesDemoTest -> reverseArraytest", true);
 
 		int[] result = ExamplesDemo.reverseArray(searchKey);
 		if (!Arrays.equals(result, expectedOutput)) {
@@ -30,7 +30,7 @@ public class ExamplesDemoTest {
 	 @Parameters({ "first-name" })
 	 @Test
 	 public void testSingleString(String firstName) {
-	   System.out.println("Invoked testString " + firstName);
+		Reporter.log("Invoked testString " + firstName, true);
 	   assert "Cedric".equals(firstName);
 	 }
 	
