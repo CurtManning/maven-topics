@@ -10,13 +10,12 @@ public class MultiDimArrayDemo {
 				{ 7, 8, 9 } };
 
 		
-		printTwoDiamentionArray( matrix);
+		printTwoDimensionaArray( matrix);
 		multiDimArrayDemo();
 
 	}
 
-	public static void printTwoDiamentionArray(int[][] matrix) {
-		// TODO Auto-generated method stub
+	public static void printTwoDimensionaArray(int[][] matrix) {
 
 		printMatrix(matrix);
 
@@ -47,7 +46,7 @@ public class MultiDimArrayDemo {
 		// Change the Multi-dimensional Array Code to print the following:
 		// “Mrs. Smith”
 		// “Mr.Jones”
-		String[] name = { "Mr ", "Smith" };
+		// String[] name = { "Mr ", "Smith" };
 		String[][] names = {
 				// 1st row
 				{ "Mr", "Mrs", "Ms" },
