@@ -40,7 +40,7 @@ public class ReadWriteTest {
 					Reporter.log("FAILED TEST - Found ASCII Dec " + String.format("%d ", myByte) + " "
 							+ String.format("0x%02X ", myByte) + " in input file. Tryed to match with  "
 							+ String.format("%d ", f2[f2count]) + "  " + String.format("0x%02X ", f2[f2count])
-							+ " in the output file", true);
+							+ " in output file", true);
 					break;
 				}
 				Reporter.log("WARNING - Input file found (NL line feed, new line) ASCII Dec "
