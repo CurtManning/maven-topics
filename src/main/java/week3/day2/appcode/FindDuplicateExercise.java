@@ -14,7 +14,7 @@ import java.util.Set;
 public class FindDuplicateExercise {
 
 	public static ArrayList<String> findDuplicates1(String[] input) {
-		// TODO Auto-generated method stub
+
 		ArrayList<String> dups = new ArrayList<String>();
 
 		for (int i = 0; i < input.length; i++) {
@@ -43,7 +43,7 @@ public class FindDuplicateExercise {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		String[] names = { "Java", "JavaScript", "Python", "C", "Ruby", "Java" };
 		ArrayList<String> result = findDuplicates(names);
 		System.out.println(result);

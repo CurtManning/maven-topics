@@ -4,13 +4,9 @@ public class MultiDimArrayDemo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[][] matrix = { 
-				{ 1, 2, 3 }, 
-				{ 4, 5, 6 }, 
-				{ 7, 8, 9 } };
+		int[][] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 
-		
-		printTwoDimensionaArray( matrix);
+		printTwoDimensionaArray(matrix);
 		multiDimArrayDemo();
 
 	}
@@ -22,7 +18,7 @@ public class MultiDimArrayDemo {
 	}
 
 	public static void printMatrix(int[][] matrix) {
-		
+
 		System.out.println("Original Array");
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {
@@ -30,7 +26,7 @@ public class MultiDimArrayDemo {
 			}
 			System.out.println();
 		}
-		
+
 		System.out.println(" The Transpose Matrix ");
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {
@@ -55,10 +51,10 @@ public class MultiDimArrayDemo {
 
 		};
 		// This will output Mr.Smith..
-		System.out.println(names[0][1] +". " + names[1][0]);
+		System.out.println(names[0][1] + ". " + names[1][0]);
 		// This will output ?
 
-		System.out.println(names[0][0] + "."+ names[1][1]);
+		System.out.println(names[0][0] + "." + names[1][1]);
 
 	}
 

@@ -1,5 +1,6 @@
 package week3.day1.testclasses;
 
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -23,5 +24,6 @@ public class InstanceDataProviderExample {
 	     public void instanceDbProvider(int p1, String p2,String p3) {
 	    	 Reporter.log("InstanceDataProviderExample -> instanceDbProvider", true);
 	    	 Reporter.log("Instance DataProvider Example: Data(" + p1 + ", " + p2 +", " + p3 + ")", true);
+	    	 Assert.assertTrue(true);
 	     } 
 }

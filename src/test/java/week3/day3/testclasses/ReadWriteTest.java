@@ -19,10 +19,10 @@ public class ReadWriteTest {
 
 	@Test
 	public void readWriteScannerTest() throws IOException {
-		String inputFileFile = "src/main/resources/xanadu.txt";
+		String inputFile = "src/main/resources/xanadu.txt";
 		String outputFile = "src/main/resources/characteroutput.txt";
 		Reporter.log("ReadWriteTest.readWriteScannerTest -> ReadWriteScanner.readWriteScanner", true);
-		ReadWriteScanner.readWriteScanner(inputFileFile, outputFile);
+		ReadWriteScanner.readWriteScanner(inputFile, outputFile);
 		String currentDir = System.getProperty("user.dir");
 		System.out.println("Current dir using System:" + currentDir);
 

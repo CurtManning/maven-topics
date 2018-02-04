@@ -28,10 +28,10 @@ public class WriteStringToFile {
 	}
 
 	public static void main(String[] args) throws IOException {
-		String inputFileFile = "src/main/resources/xanadu.txt";
+		String inputFile = "src/main/resources/xanadu.txt";
 		String outputFile = "src/main/resources/characteroutput.txt";
-		String strOutput = ReadFileToString.readFileToString(inputFileFile);
-		// strOutput = "Testing " + strOutput;   // remove comment to test
+		String strOutput = ReadFileToString.readFileToString(inputFile);
+		// strOutput = "Testing " + strOutput; // remove comment to test
 		writeStringToFile(strOutput, outputFile);
 	}
 }

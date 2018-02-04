@@ -9,13 +9,13 @@ import java.io.IOException;
 
 public class ReadWriteLines {
 	
-	public static void readWriteLines(String inputFileFile, String outputFile) throws IOException {
+	public static void readWriteLines(String inputFile, String outputFile) throws IOException {
 
 		BufferedReader inputStream = null;
 		PrintWriter outputStream = null;
 
 		try {
-			inputStream = new BufferedReader(new FileReader(inputFileFile));
+			inputStream = new BufferedReader(new FileReader(inputFile));
 			outputStream = new PrintWriter(new FileWriter(outputFile));
 
 			String l;
@@ -37,8 +37,8 @@ public class ReadWriteLines {
 	}
 
 	public static void main(String[] args) throws IOException {
-		String inputFileFile = "src/main/resources/xanadu.txt";
+		String inputFile = "src/main/resources/xanadu.txt";
 		String outputFile = "src/main/resources/characteroutput.txt";
-		readWriteLines(inputFileFile, outputFile);
+		readWriteLines(inputFile, outputFile);
 	}
 }

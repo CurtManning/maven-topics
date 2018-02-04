@@ -20,7 +20,6 @@ public class ConvertArrayToArrayList {
 
 	}
 
-	
 	public static String[] convertArrayToArrayList1() {
 		ArrayList<String> assetTradingList = new ArrayList<String>();
 		assetTradingList.add("Stock trading");
@@ -44,13 +43,14 @@ public class ConvertArrayToArrayList {
 	}
 	
 	public static ArrayList<String> convertArrayToArrayList3(String[] asset) {
+		
 		ArrayList<String> newAssetList = new ArrayList<String>();
+		
 		for (String s : asset) {
 			newAssetList.add(s);
 		}
 		
 		return newAssetList;
 	}
-
 
 }

@@ -29,7 +29,7 @@ public class FindDuplicateExerciseTest {
 		String[] names = { "Java", "JavaScript", "Python", "C", "Ruby", "Java" };
 		ArrayList<String> expectedArrayList = new ArrayList<String>();
 		expectedArrayList.add("Java");
-		Reporter.log("FindDuplicateExerciseTest.findDuplicatesTest1 -> " + "FindDuplicateExercise.findDuplicates1",
+		Reporter.log("FindDuplicateExerciseTest.findDuplicatesTest1 -> " + "FindDuplicateExercise.findDuplicatest1",
 				true);
 		ArrayList<String> expectedResults = FindDuplicateExercise.findDuplicates1(names);
 		Assert.assertEquals(expectedArrayList, expectedResults);
