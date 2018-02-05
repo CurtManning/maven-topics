@@ -4,7 +4,7 @@ import java.io.*;
 
 public class ReadFileToString {
 
-	public static String readFileToString(String inputFile) throws IOException {
+	public static String readFileToString(String inputFile) {
 
 		String fileOut = "";
 		File aFile = new File(inputFile);
@@ -17,8 +17,16 @@ public class ReadFileToString {
 			fileOut = new String(byteFile);
 
 			file.close();
+		} catch (FileNotFoundException fnf) {
+			System.err.format("File: %s not found%n", inputFile);
+			fnf.printStackTrace();
 		} catch (IOException ioe) {
 			System.out.println("Error -- " + ioe.toString());
+			ioe.printStackTrace();
+		} catch (ArrayIndexOutOfBoundsException ioe) {
+			// catch block
+			System.out.println("Array out of Bounds -- " + ioe.toString());
+			ioe.printStackTrace();
 		}
 
 		return fileOut;

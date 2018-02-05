@@ -3,7 +3,7 @@ package week3.day4.appcode;
 import java.io.*;
 
 public class ReadWriteDoubleArray {
-	public static double[][] readFile(String inputFile) throws IOException {
+	public static double[][] readFile(String inputFile) {
 
 		BufferedReader inputStream = null;
 		double[][] output = new double[4][5];
@@ -35,7 +35,12 @@ public class ReadWriteDoubleArray {
 			e.printStackTrace();
 		} finally {
 			if (inputStream != null) {
-				inputStream.close();
+				try {
+					inputStream.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 
 		}

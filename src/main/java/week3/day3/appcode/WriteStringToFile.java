@@ -1,14 +1,14 @@
 package week3.day3.appcode;
 
 import java.io.FileWriter;
-import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.IOException;
+
 import week3.day3.appcode.ReadFileToString;;
 
 public class WriteStringToFile {
 
-	public static void writeStringToFile(String inputString, String outputFile) throws IOException {
+	public static void writeStringToFile(String inputString, String outputFile) {
 
 		PrintWriter outputStream = null;
 
@@ -16,15 +16,14 @@ public class WriteStringToFile {
 			outputStream = new PrintWriter(new FileWriter(outputFile));
 			outputStream.print(inputString);
 
-		} catch (FileNotFoundException e) {
-			// catch block
-			e.printStackTrace();
+		} catch (IOException ioe) {
+			System.out.println("IO Error -- " + ioe.toString());
+			ioe.printStackTrace();
 		} finally {
 			if (outputStream != null) {
 				outputStream.close();
 			}
 		}
-
 	}
 
 	public static void main(String[] args) throws IOException {

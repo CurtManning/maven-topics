@@ -8,8 +8,8 @@ import java.io.PrintWriter;
 import java.io.IOException;
 
 public class ReadWriteLines {
-	
-	public static void readWriteLines(String inputFile, String outputFile) throws IOException {
+
+	public static void readWriteLines(String inputFile, String outputFile) {
 
 		BufferedReader inputStream = null;
 		PrintWriter outputStream = null;
@@ -19,21 +19,34 @@ public class ReadWriteLines {
 			outputStream = new PrintWriter(new FileWriter(outputFile));
 
 			String l;
+			
 			while ((l = inputStream.readLine()) != null) {
 				outputStream.println(l);
 			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (FileNotFoundException fnf) {
+			System.err.format("File: %s not found%n", inputFile);
+			fnf.printStackTrace();
+		} catch (IOException ioe) {
+			System.out.println("Error -- " + ioe.toString());
+			ioe.printStackTrace();
+		} catch (ArrayIndexOutOfBoundsException ioe) {
+			// catch block
+			System.out.println("Array out of Bounds -- " + ioe.toString());
+			ioe.printStackTrace();
 		} finally {
 			if (inputStream != null) {
-				inputStream.close();
+				try {
+					inputStream.close();
+				} catch (IOException ioe) {
+					System.out.println("Error -- " + ioe.toString());
+					ioe.printStackTrace();
+				}
 			}
 			if (outputStream != null) {
 				outputStream.close();
 			}
 		}
-	
+
 	}
 
 	public static void main(String[] args) throws IOException {
