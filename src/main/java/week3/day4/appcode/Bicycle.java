@@ -1,5 +1,5 @@
 package week3.day4.appcode;
-class Bicycle {
+public class Bicycle {
 	//Member variables...
 	    int cadence = 0;   ///state
 	    int speed = 0;     //state
@@ -11,12 +11,22 @@ class Bicycle {
 	    //Methods (changeCadence, changeGear, speedUp etc.) define its interaction with the outside world.
 	  
 	    //behaviour..
-	    void changeCadence(int newValue) {
+	    public Bicycle(){
+	 	   
+	    }
+	      public Bicycle(int startCadence, int startSpeed, int startGear) {
+	      	
+	  	// TODO Auto-generated constructor stub
+	      	this.cadence=startCadence;
+	      	this.speed=startSpeed;
+	      	this.gear=startGear;
+	  }
+	    public void changeCadence(int newValue) {
 	     //int x=10;
 	         cadence = newValue;
 	    }
 
-	    void changeGear(int newValue) {
+	    public void changeGear(int newValue) {
 	         gear = newValue;
 	    }
 	    
@@ -24,17 +34,32 @@ class Bicycle {
 	         direction = direction + newValue;   
 	    }
 
-	    void speedUp(int increment) {
+	    public void speedUp(int increment) {
 	         speed = speed + increment;   
 	    }
 
-	    void applyBrakes(int decrement) {
+	    public void applyBrakes(int decrement) {
 	         speed = speed - decrement;
 	    }
 
-	    void printStates() {
+	    public void printStates() {
 	         System.out.println("cadence:" +
 	             cadence + " speed:" + 
 	             speed + " gear:" + gear + " direction: " + direction);
+	    }
+	    
+	    public int getCadence () {
+	    	return this.cadence;
+	    }
+	    
+	    public int getSpeed () {
+	    	return this.speed;
+	    }
+	    
+	    public int getGear () {
+	    	return this.gear;
+	    }
+	    public int getDirection () {
+	    	return this.direction;
 	    }
 	}

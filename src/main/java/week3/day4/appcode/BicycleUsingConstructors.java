@@ -25,5 +25,17 @@ public class BicycleUsingConstructors {
 	void printStates() {
 		System.out.println("cadence:" + cadence + " speed:" + speed + " gear:" + gear);
 	}
+	
+    public int getCadence () {
+    	return this.cadence;
+    }
+    
+    public int getSpeed () {
+    	return this.speed;
+    }
+    
+    public int getGear () {
+    	return this.gear;
+    }
 
 }

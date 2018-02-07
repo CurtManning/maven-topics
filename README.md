@@ -3,7 +3,7 @@
 
 *Default Structure for A Basic Project*
 
-**Java 8**
+**Java 9**
 
 * Maven
 * TestNG
@@ -12,7 +12,7 @@
 * Apache POI
 * mySQL
 * log4j
-* Selenium 2.0/3.0
+* Selenium 
 
 Java Project for SQA Boot Camp Programs. 
 

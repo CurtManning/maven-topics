@@ -1,14 +1,14 @@
-package week4.day1;
+package week4.day1.appcode;
 
 public class ShadowTest {
 
     public int x = 0;
 
-    class FirstLevel {
+    public class FirstLevel {
 
         public int x = 1;
 
-        int[] methodInFirstLevel(int x) {
+        public int[] methodInFirstLevel(int x) {
         	int[] z = {x,this.x, ShadowTest.this.x};
             return z;
         }
