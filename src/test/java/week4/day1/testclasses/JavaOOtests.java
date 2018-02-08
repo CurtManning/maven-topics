@@ -1,4 +1,6 @@
-package week4.day1;
+package week4.day1.testclasses;
+
+import java.util.Arrays;
 
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -11,18 +13,11 @@ public class JavaOOtests {
 	@Test
 	public void shadowTest() {
 
-		int[] z = {23, 1, 0};
-		boolean trueFalse = false;
+		int[] expected = {23, 1, 0};
         ShadowTest st = new ShadowTest();
         ShadowTest.FirstLevel fl = st.new FirstLevel();
-        int [] y = fl.methodInFirstLevel(23);
-
+        int [] result = fl.methodInFirstLevel(23);
 		Reporter.log("JavaOOtests.shadowTest -> ShadowTest", true);
-
-		if ((z[0] == y[0]) && (z[1] == y[1]) && (z[2] == y[2])) {
-			trueFalse = true;
-		}
-
-		Assert.assertTrue(trueFalse);
+		Assert.assertTrue( Arrays.toString(result).equals(Arrays.toString(expected)));
 	}
 }

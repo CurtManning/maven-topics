@@ -1,5 +1,6 @@
 package week4.day1.appcode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -11,14 +12,17 @@ import java.util.HashSet;
  * printArray(int[],sum)
  *
  */
+
 public class SumExcercise {
 	
-	public static void printPairsUsingSet(int[] numbers, int n) {
+	public static ArrayList<String> printPairsUsingSet(int[] numbers, int n) {
+		ArrayList<String> results = new ArrayList<String>();
 		if (numbers.length < 2) {
-			return;
+			return results;
 		}
 		
 		HashSet<Integer> set = new HashSet<Integer>(numbers.length);
+	
 		
 		for (int value : numbers) {
 			int target = n - value;
@@ -28,17 +32,20 @@ public class SumExcercise {
 				set.add(value);
 				
 			} else {
-				System.out.printf("(%d,%d, args) %n", value, target);
+				System.out.println("printPairsUsingSet " + value + "+" + target);
+				results.add(value + "+" + target);
 			}
+		//	System.out.println(results);
 				
 		}
-		
+		return results;
 	}
 
-	static void printPairsUsingTwoPointers(int[] array, int k) {
+	public static ArrayList<String> printPairsUsingTwoPointers(int[] array, int k) {
 
+		ArrayList<String> results = new ArrayList<String>();
 		if (array.length < 2) {
-			return;
+			return results;
 		}
 		Arrays.sort(array);
 		// printPairs(input, sum);
@@ -48,7 +55,7 @@ public class SumExcercise {
 		while (left < right) {
 			int sum = array[left] + array[right];
 			if (sum == k) {
-				System.out.printf("(%d,%d, args) %n ", array[left], array[right]);
+				results.add(array[left] + "+" + array[right]);
 				left = left + 1;
 				right = right - 1;
 
@@ -58,32 +65,50 @@ public class SumExcercise {
 				right = right - 1;
 			}
 		}
-
+		return results;
 	}
 
-	public static void printPairs(int[] array, int sum) {
+	public static ArrayList<String> printPairs(int[] array, int sum) {
+		ArrayList<String> results = new ArrayList<String>();
 		for (int i = 0; i < array.length; i++) {
 			int first = array[i];
 			for (int j = i + 1; j < array.length; j++) {
 				int second = array[j];
 				if ((first + second) == sum) {
-					System.out.printf("(%d, %d) %n", first, second);
+					results.add(first + "+" + second);
 				}
 			}
 		}
+		return results;
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int[] array = { 2, 6, 3, 9, 11 };
+		int[] array = { 0, 2, 6, 3, 9, 11 };
 		int k = 9;
 
 		Arrays.sort(array);
 		
-		printPairs(array, k);
-		printPairsUsingTwoPointers(array, k);
-		printPairsUsingSet(array, k);
+		System.out.println("printPairsUsingTwoPointers");
+		ArrayList<String> results1 = printPairsUsingTwoPointers(array, k);
+		for (String result : results1) {
+			System.out.println("(" + result + ") = "+ k);
+		}
+		
+		System.out.println("printPairsUsingSet");
+		ArrayList<String> results2 = printPairsUsingSet(array, k);
+		System.out.println(results2);
+		for (String result : results2) {
+			System.out.println("(" + result + ") = "+ k);
+		}
+		
+		System.out.println("printPairs");
+		ArrayList<String> results3 = printPairs(array, k);
+		for (String result : results3) {
+			System.out.println("(" + result + ") = "+ k);
+		}
+
 	}
 
 }
