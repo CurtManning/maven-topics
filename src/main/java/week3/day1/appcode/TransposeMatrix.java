@@ -15,7 +15,7 @@ public class TransposeMatrix {
 				System.out.print(matrix[i][j] + "\t");
 			}
 			System.out.println();
-		} // {3,6,9}};
+		} 
 		System.out.println(" Transpose  Matrix ");
 		int[][] transposeMatrix = transposeMatrix(matrix);
 		for (int i = 0; i < transposeMatrix.length; i++) {

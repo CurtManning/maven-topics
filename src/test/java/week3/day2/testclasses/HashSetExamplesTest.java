@@ -24,26 +24,13 @@ public class HashSetExamplesTest {
 		expectedSet.add("Mango");
 		expectedSet.add(null);
 
-		boolean trueFalse = true;
-
 		Reporter.log("HashSetExamplesTest.hashSetExamplesTest -> " + "HashSetExamples.hashSetExample", true);
-		Set<String> expectedResults = HashSetExamples.hashSetExample();
-		if (expectedSet == null || expectedResults == null) {
-			Reporter.log("Null set ", true);
-			trueFalse = false;
-		}
+		
+		Set<String> results = HashSetExamples.hashSetExample();
+		String expectedString = util.ArrayStringParser.toSortedString(expectedSet+"");
+		String resultsString = util.ArrayStringParser.toSortedString(results+"");
 
-		if (expectedSet.size() != expectedResults.size()) {
-			Reporter.log("Size set ", true);
-			trueFalse = false;
-		}
-
-		if (trueFalse) {
-			trueFalse = expectedSet.containsAll(expectedResults);
-			Reporter.log("ContainsAll = " + trueFalse, true);
-		}
-
-		Assert.assertTrue(trueFalse);
+		Assert.assertEquals(expectedString, resultsString);
 
 	}
 

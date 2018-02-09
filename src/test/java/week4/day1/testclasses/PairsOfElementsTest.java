@@ -13,65 +13,67 @@ public class PairsOfElementsTest {
 	@Test
 	public void printPairsUsingTwoPointerstest() {
 		// pPairsUsingTwoPointers
-		boolean trueFalse = false;
 		int[] array = { 0, 2, 6, 3, 9, 11 };
-		String[] cArray = { "0+9", "3+6" };
-		int k = 9;
+		String[] expected = { "3+6", "0+9", "6+3", "9+0" };
+		int sum = 9;
 		Reporter.log("printPairsUsingTwoPointers", true);
-		ArrayList<String> results1 = SumExcercise.printPairsUsingTwoPointers(array, k);
-		for (String s : results1) {	
-			if ((s.equals(cArray[0])) || (s.equals(cArray[1]))) {
-				Reporter.log("printPairsUsingTwoPointers Match found (" + s + ") = " + k, true);
-				trueFalse = true;
+		ArrayList<String> results = SumExcercise.printPairsUsingTwoPointers(array, sum);
+
+		int resultsFound = results.size();
+		int resultsMatched = 0;
+		for (String restr : results) {
+			for (int i = 0; i < expected.length; i++) {
+				if (expected[i].equals(restr)) {
+					Reporter.log("Found match expected[" + i + "] = " + expected[i], true);
+					resultsMatched++;
+				}
 			}
 		}
-		Assert.assertTrue(trueFalse);
+		Assert.assertEquals(resultsFound, resultsMatched);
 	}
-	
+
 	@Test
 	public void printPairstest() {
 		// printPairs
-		boolean trueFalse = false;
-		int[] array = { 0, 2, 6, 3, 9, 11 };
-		String[] cArray = { "0+9", "3+6" };
-		int k = 9;
+		int[] array = {0, 2, 6, 3, 9, 11};
+		String[] expected = { "3+6", "0+9", "6+3", "9+0" };
+		int sum = 9;
 		Reporter.log("printPairs", true);
-		ArrayList<String> results2 = SumExcercise.printPairs(array, k);
-		for (String res : results2) {
-			
-			if ((res.equals(cArray[0])) || (res.equals(cArray[1]))) {
-				Reporter.log("printPairs Match found (" + res + ") = " + k, true);
-				trueFalse = true;
-			}
+		ArrayList<String> results = SumExcercise.printPairs(array, sum);
 
-		}
-		Assert.assertTrue(trueFalse);
-	}
-	
-	@Test
-	public void printPairsUsingSettest() {
-		// printPairs
-		boolean trueFalse = false;
-		int[] array = { 0, 2, 6, 3, 9, 11 };
-		String[] cArray = { "3+6", "0+9", "3+6", "9+0" };
-		int k = 9;
-		Reporter.log("printPairsUsingSettest", true);
-		ArrayList<String> results3 = SumExcercise.printPairsUsingSet(array, k);
-		Reporter.log("printPairsUsingSettest " +results3, true);
-	
-		for (String restr : results3) {
-			System.out.println("restr "+restr );
-			for (int i = 0; i < cArray.length; i++) {
-				System.out.println("cArray{"+ i + "] = "+ cArray[i]);
-				if (cArray[i].equals(restr)) {
-					trueFalse = true;
+		int resultsFound = results.size();
+		int resultsMatched = 0;
+		for (String restr : results) {
+			for (int i = 0; i < expected.length; i++) {
+				if (expected[i].equals(restr)) {
+					Reporter.log("Found match expected[" + i + "] = " + expected[i], true);
+					resultsMatched++;
 				}
 			}
-	
 		}
-		//Assert.assertTrue( Arrays.toString(cArray).equals(Arrays.toString(results3)));
-		Assert.assertTrue(trueFalse);
+		Assert.assertEquals(resultsFound, resultsMatched);
 	}
-	
+
+	@Test
+	public void printPairsUsingSettest() {
+		// printPairsUsingSet
+		int[] array = { 0, 2, 6, 3, 9, 11 };
+		String[] expected = { "3+6", "0+9", "6+3", "9+0" };
+		int sum = 9;
+		Reporter.log("printPairsUsingSettest", true);
+		ArrayList<String> results = SumExcercise.printPairsUsingSet(array, sum);
+		Reporter.log("printPairsUsingSettest " + results, true);
+		int resultsFound = results.size();
+		int resultsMatched = 0;
+		for (String restr : results) {
+			for (int i = 0; i < expected.length; i++) {
+				if (expected[i].equals(restr)) {
+					Reporter.log("Found match expected[" + i + "] = " + expected[i], true);
+					resultsMatched++;
+				}
+			}
+		}
+		Assert.assertEquals(resultsFound, resultsMatched);
+	}
 
 }

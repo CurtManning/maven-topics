@@ -16,34 +16,43 @@ public class TransposeMatrixTest {
 		int[][] searchKey = new int[3][3];
 		boolean trueFalse = true;
 		int[][] expectedOutput = new int[3][3];
+		try {
+			for (int i = 0; i < 3; i++) {
 
-		for (int i = 0; i < 3; i++) {
+				TransposeMatrixDataProvider arrayobj = Arrayobj[i];
+				List<Integer> er = arrayobj.getExpectedResults();
+				List<Integer> id = arrayobj.getInputDataArray();
 
-			TransposeMatrixDataProvider arrayobj = Arrayobj[i];
-			List<Integer> er = arrayobj.getExpectedResults();
-			List<Integer> id = arrayobj.getInputDataArray();
-			int[] exArray = er.stream().mapToInt(Integer::intValue).toArray();
-			int[] idArray = id.stream().mapToInt(Integer::intValue).toArray();
-			for (int j = 0; j < exArray.length; j++) {
-				int jx = exArray[j];
-				int ji = idArray[j];
-				searchKey[i][j] = ji;
-				expectedOutput[i][j] = jx;
-				// System.out.println("matrix " + searchKey[i][j]);
-			}
-		}
-
-		int[][] result = TransposeMatrix.transposeMatrix(searchKey);
-		// System.out.println(" The original Matrix ");
-		for (int i = 0; i < searchKey.length; i++) {
-			for (int j = 0; j < searchKey[i].length; j++) {
-				if (result[i][j] != expectedOutput[i][j])
-					trueFalse = false;
-
+				int[] exArray = er.stream().mapToInt(Integer::intValue).toArray();
+				int[] idArray = id.stream().mapToInt(Integer::intValue).toArray();
+				for (int j = 0; j < exArray.length; j++) {
+					int jx = exArray[j];
+					int ji = idArray[j];
+					searchKey[i][j] = ji;
+					expectedOutput[i][j] = jx;
+					// System.out.println("matrix " + searchKey[i][j]);
+				}
 			}
 
+			int[][] result = TransposeMatrix.transposeMatrix(searchKey);
+			// System.out.println(" The original Matrix ");
+			for (int i = 0; i < searchKey.length; i++) {
+				for (int j = 0; j < searchKey[i].length; j++) {
+					if (result[i][j] != expectedOutput[i][j])
+						trueFalse = false;
+
+				}
+
+			}
+
+		} catch (ArrayIndexOutOfBoundsException e) {
+			// catch block
+			Reporter.log("Out of Bounds Exception", true);
+			e.printStackTrace();
+		} finally {
+			Reporter.log("TransposeMatrix.transposeMatrix", true);
+			Assert.assertTrue(trueFalse);
 		}
-		Reporter.log("TransposeMatrixTest -> testMethodforClass :" + trueFalse, true);
-		Assert.assertTrue(trueFalse);
+
 	}
 }

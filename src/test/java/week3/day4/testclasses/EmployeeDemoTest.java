@@ -21,21 +21,17 @@ public class EmployeeDemoTest {
 	@Test(dataProvider = "getData")
 	public void employeeDemoTest(String name, int age, String designation, double salary) {
 
-		boolean trueFalse = false;
 		Employee demo = new Employee(name);
 		demo.setEmpAge(age);
 		demo.setEmpDesignation(designation);
 		demo.setEmpSalary(salary);
-		demo.printResults();
-
+		// demo.printResults();
+		String expected = name+age+designation+salary;
+		String results = demo.getName()+demo.getAge()+demo.getEmpDesignation()+demo.getSalary();
 		Reporter.log("EmployeeDemoTest.employeeDemoTest -> EmployeeDemoTest.employeeDemoTest", true);
 
-		if ((name == demo.getName()) && (age == demo.getAge()) && (designation == demo.getEmpDesignation())
-				&& (salary == demo.getSalary())) {
-			trueFalse = true;
-		}
 
-		Assert.assertTrue(trueFalse);
+		Assert.assertEquals(results, expected);
 	}
 
 }

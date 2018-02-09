@@ -70,7 +70,7 @@ public class TransposeMatrixDataProvider {
 
 		TransposeMatrixDataProvider[] Arrayobj = new TransposeMatrixDataProvider[6];
 		System.out.println("Declaration Successful : Assign Data Provider");
-		Arrayobj[0] = new TransposeMatrixDataProvider(); // I made mistake here, Commenting to highlight learning
+		Arrayobj[0] = new TransposeMatrixDataProvider();
 		Arrayobj[0].setInputData(1);
 		Arrayobj[0].setInputDataArray(TestOneInputList);
 		Arrayobj[0].setExpectedResults(TestOneExpectedList);

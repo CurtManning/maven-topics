@@ -15,28 +15,21 @@ public class MyClassTest {
 			{12, "Mark", 40},
 			{16,"Sally", 25},
 			{18,"Tom", 35}
-		};
-		
-	}
-	
+		};		
+	}	
 
 	@Test(dataProvider="getData")
 	public void myClassTest(int id, String name, int age) {
 		
-		boolean trueFalse = false;
 		Student myInstance = new Student();
-
+		String expected = id+name+age;
 		myInstance.setId(id);
 		myInstance.setName(name);
 		myInstance.setAge(age);
-
+		String results = myInstance.getId() + myInstance.getName() + myInstance.getAge();
 		Reporter.log("MyClassTest.myClassTest -> MyClass.printStudent", true);
-		//myInstance.printStudent();
-		if ((id == myInstance.getId()) && (name == myInstance.getName()) &&  (age == myInstance.getAge())) {
-			trueFalse = true;
-		}
 		
-		Assert.assertTrue(trueFalse);
+		Assert.assertEquals(results, expected);
 	}
 	 
 }

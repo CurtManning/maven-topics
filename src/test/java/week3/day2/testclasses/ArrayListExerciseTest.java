@@ -15,26 +15,23 @@ public class ArrayListExerciseTest {
 	@Test(enabled = true, dataProvider = "arrayListDataProvider", dataProviderClass = ArrayListExerciseDataProvider.class)
 	public void arrayListTest(ArrayListExerciseDataProvider[] Arrayobj) {
 
-		boolean trueFalse = true;
+		String expectedString = "";
+		String resultsString = "";
 
 		try {
 			for (ArrayListExerciseDataProvider arrayobj : Arrayobj) {
 
 				List<String> expectedOutput = new ArrayList<String>(arrayobj.getInputDataArray());
-				String[] idArray = expectedOutput.toArray(new String[expectedOutput.size()]);
-				ArrayList<String> result1 = ArrayListExercise.addElements(idArray);
-				String[] result = result1.toArray(new String[expectedOutput.size()]);
-				Reporter.log("result[]  : " + result[0] + "  " + result[1] + " " + result[2] + " " + result[3], true);
-				Reporter.log("idArray[] : " + idArray[0] + "  " + idArray[1] + " " + idArray[2] + " " + idArray[3], true);
-				
-				for (int j = 0; j < idArray.length; j++) {
-					Reporter.log(" if " + idArray.length + " != " + result.length + " and  " + idArray[j] + "!=" + result[j], true);
+				String[] idArray = expectedOutput.toArray(new String[expectedOutput.size()]); 
+				ArrayList<String> result = ArrayListExercise.addElements(idArray);
+	
+				expectedString = util.ArrayStringParser.toSortedString(expectedOutput+"");
+				resultsString = util.ArrayStringParser.toSortedString(result+"");
 
-					if ((idArray.length != result.length) || (idArray[j] != result[j])) {
-						Reporter.log("FALSE if " + idArray.length + " != " + result.length + " or  " + idArray[j] + "!="
-								+ result[j], true);
-						trueFalse = false;
-					}
+				if (!expectedString.equals(resultsString)) {
+					Reporter.log("Expected :"+ expectedString, true);
+					Reporter.log("Result   :"+ resultsString, true);
+					break;
 				}
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
@@ -42,8 +39,8 @@ public class ArrayListExerciseTest {
 			Reporter.log("Out of Bounds Exception", true);
 			e.printStackTrace();
 		} finally {
-
-			Assert.assertTrue(trueFalse);
+			Reporter.log("ArrayListExercise.addElements ", true);
+			Assert.assertEquals(expectedString, resultsString);
 		}
 	}
 }

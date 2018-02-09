@@ -22,7 +22,7 @@ public class BicycleDemoTest {
 		// Invoke methods on
 		// those objects
 		acmeBike1.changeCadence(2);
-		acmeBike1.printStates();
+		//acmeBike1.printStates();
 		acmeBike1.speedUp(7);
 		acmeBike1.applyBrakes(2);
 		acmeBike1.changeGear(10);
@@ -31,15 +31,15 @@ public class BicycleDemoTest {
 		acmeBike2.speedUp(30);
 		acmeBike2.applyBrakes(20);
 		acmeBike2.changeGear(3);
-		acmeBike2.printStates();
-		acmeBike1.printStates();
+		//acmeBike2.printStates();
+		//acmeBike1.printStates();
 
 		if ((acmeBike1.getCadence() != 2) || (acmeBike1.getSpeed() != 5) || (acmeBike1.getGear() != 10)) {
-			Reporter.log("Problem with acmeBike1 ", true);
+		//	Reporter.log("Problem with acmeBike1 ", true);
 			trueFalse = false;
 		}
 		if ((acmeBike2.getCadence() != 10) || (acmeBike2.getSpeed() != 10) || (acmeBike2.getGear() != 3)) {
-			Reporter.log("acmeBike2 ", true);
+		//	Reporter.log("acmeBike2 ", true);
 			trueFalse = false;
 		}
 
@@ -78,7 +78,7 @@ public class BicycleDemoTest {
 		// Invoke methods on
 		// those objects
 		bike1.changeCadence(2);
-		bike1.printStates();
+	//	bike1.printStates();
 		bike1.changeDirection(5);
 		bike1.speedUp(7);
 		bike1.applyBrakes(2);
@@ -88,13 +88,13 @@ public class BicycleDemoTest {
 		bike2.speedUp(30);
 		bike2.applyBrakes(20);
 		bike2.changeGear(3);
-		bike1.printStates();
-		bike2.printStates();
+	//	bike1.printStates();
+	//	bike2.printStates();
 		// Check the static field.
 		bike1.changeDirection(10);
 		
-		Reporter.log(
-				bike1.getCadence() + " " + bike1.getSpeed() + " " + bike1.getGear() + " " + bike1.getDirection(), true);
+	//	Reporter.log(
+	//			bike1.getCadence() + " " + bike1.getSpeed() + " " + bike1.getGear() + " " + bike1.getDirection(), true);
 		if ((bike1.getCadence() != 2) || (bike1.getSpeed() != 5) || (bike1.getGear() != 10)
 				|| (bike1.getDirection() != 25)) {
 			Reporter.log("Problem with bike1 ", true);
@@ -125,6 +125,8 @@ public class BicycleDemoTest {
 		mountainbike.setHeight(20);
 		mountainbike.changeDirection(10);
 		mbike.changeDirection(10);
+	//	mountainbike.printStates();
+		//mbike.printStates();
 
 		// mountainbike.printStates();
 
@@ -133,10 +135,6 @@ public class BicycleDemoTest {
 				+ " gear:" + mountainbike.getGear() + "  Seat Height: " + mountainbike.getSeatHeight() + " Direction "
 				+ mountainbike.getDirection(), true);
 
-		// mbike.printStates();
-
-		Reporter.log(mountainbike.getCadence() + " " + mountainbike.getSpeed() + " " + mountainbike.getGear()
-				+ " " + mountainbike.getDirection(), true);
 		
 		if ((mountainbike.getCadence() != 50) || (mountainbike.getSpeed() != 10) || (mountainbike.getGear() != 1)
 				|| (mountainbike.getSeatHeight() != 20) || (mountainbike.getDirection() != 45)) {
@@ -145,8 +143,8 @@ public class BicycleDemoTest {
 		}
 		mountainbike.changeDirection(10);  // checking static
 		
-		Reporter.log("mbike    Cadence:" + mbike.getCadence() + " speed:" + mbike.getSpeed() + " gear:"
-				+ mbike.getGear() + "  Seat Height: " + mbike.getSeatHeight() + " Direction " + mbike.getDirection(), true);
+	Reporter.log("mbike    Cadence:" + mbike.getCadence() + " speed:" + mbike.getSpeed() + " gear:"
+			+ mbike.getGear() + "  Seat Height: " + mbike.getSeatHeight() + " Direction " + mbike.getDirection(), true);
 
 		if ((mbike.getCadence() != 30) || (mbike.getSpeed() != 0) || (mbike.getGear() != 8)
 				|| (mountainbike.getSeatHeight() != 20) || (mbike.getDirection() != 55)) {
