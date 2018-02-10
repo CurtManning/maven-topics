@@ -7,12 +7,14 @@ public class BinarySearchExercise {
 	public static int binarySearch(int[] input, int number) {
 
 		Arrays.sort(input);
+		System.out.println(Arrays.toString(input));
 		int low = 0;
 		int high = input.length - 1;
 
 		while (high >= low) {
 
 			int middle = (low + high) / 2;
+			System.out.println(middle);
 			if (input[middle] == number) {
 				return middle;
 			} else if (input[middle] < number) {
