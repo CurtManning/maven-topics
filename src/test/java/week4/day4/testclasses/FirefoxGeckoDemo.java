@@ -14,10 +14,10 @@ public class FirefoxGeckoDemo {
 	String baseUrl;
 
 
-	@Test
+	//@Test
 	public void test() {
 		System.setProperty("webdriver.gecko.driver",
-	            "/Users/CurtA/SQA-Workspace/personal/lib/geckodriver-v0.19.1-win64/geckodriver.exe");	
+	            "/Users/CurtA/SQA-Workspace/personal/driver/geckodriver-v0.19.1-win64/geckodriver.exe");	
 		     
 		driver = new FirefoxDriver();
 		baseUrl = "http://letskodeit.teachable.com/";

@@ -13,7 +13,7 @@ public class ChromeDriverDemo {
 		// http://chromedriver.storage.googleapis.com/index.html
 		String baseURL = "http://letskodeit.teachable.com/";
 		WebDriver driver;
-		System.setProperty("webdriver.chrome.driver", "/Users/CurtA/SQA-Workspace/personal/lib/chromedriver_win32/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "/Users/CurtA/SQA-Workspace/personal/driver/chromedriver_win32/chromedriver.exe");
 	
 		driver = new ChromeDriver();
 		

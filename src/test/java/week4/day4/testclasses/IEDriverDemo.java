@@ -14,7 +14,7 @@ public class IEDriverDemo {
 
 		WebDriver driver;
 		
-		System.setProperty("webdriver.ie.driver", "C:/Users/CurtA/SQA-Workspace/personal/lib/IEDriverServer_x64_3.8.0/IEDriverServer.exe");
+		System.setProperty("webdriver.ie.driver", "C:/Users/CurtA/SQA-Workspace/personal/driver/IEDriverServer_x64_3.8.0/IEDriverServer.exe");
 		
 		driver = new InternetExplorerDriver();
 		
