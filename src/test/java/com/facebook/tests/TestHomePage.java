@@ -28,7 +28,7 @@ public class TestHomePage {
 
 	@Parameters({ "BrowserName" })
 	@BeforeClass
-	public void setUp(@Optional("Firefox") String BrowserName) {
+	public void setUp(@Optional("firefox") String BrowserName) {
 
 		System.out.println(" The Browser Name " + BrowserName);
 		gds.initParameters();
@@ -63,11 +63,13 @@ public class TestHomePage {
 
 	@Test
 	public void testFaceBookTitleOnPageLoad() {
-		// String baseURL = "http://facebook.com";
+		
+		
 		// get the actual vale of the title
 		String expectedTitle = "Facebook - Log In or Sign Up";
 
 		String actualTitle = "";
+		// Problem with chrome driver. 
 		driver.get(HomePage);
 		// driver.manage().window().maximize();
 
@@ -82,10 +84,10 @@ public class TestHomePage {
 		if (actualTitle.contentEquals(expectedTitle)) {
 			System.out.println("Test Passed");
 		} else {
-			System.out.println("Test Passed");
+			System.out.println("Test Failed");
 		}
 
-		// driver.close();
+		driver.close();
 
 	}
 

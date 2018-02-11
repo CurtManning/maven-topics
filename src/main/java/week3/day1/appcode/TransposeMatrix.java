@@ -3,7 +3,7 @@ package week3.day1.appcode;
 public class TransposeMatrix {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
 		int[][] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 		// result
 		// int[][] Transpose={{1,4,7},{2,5,8},{3,6,9};
@@ -16,8 +16,10 @@ public class TransposeMatrix {
 			}
 			System.out.println();
 		} 
+		
 		System.out.println(" Transpose  Matrix ");
 		int[][] transposeMatrix = transposeMatrix(matrix);
+		
 		for (int i = 0; i < transposeMatrix.length; i++) {
 			for (int j = 0; j < transposeMatrix[i].length; j++) {
 				System.out.print(transposeMatrix[i][j] + "\t");

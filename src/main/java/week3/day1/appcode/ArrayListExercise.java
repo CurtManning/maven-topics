@@ -11,6 +11,7 @@ import java.util.Arrays;
  *
  */
 public class ArrayListExercise {
+	
 	public static ArrayList<String> addElements(String[] input) {
 
 		ArrayList<String> result = new ArrayList<String>(Arrays.asList(input));

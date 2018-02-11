@@ -3,7 +3,7 @@ package week3.day1.appcode;
 public class MultiDimArrayDemo {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
 		int[][] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 
 		printTwoDimensionaArray(matrix);
@@ -52,7 +52,6 @@ public class MultiDimArrayDemo {
 		};
 		// This will output Mr.Smith..
 		System.out.println(names[0][1] + ". " + names[1][0]);
-		// This will output ?
 
 		System.out.println(names[0][0] + "." + names[1][1]);
 
